@@ -1999,19 +1999,6 @@ const measurementsAsString = `189
     6629
     6624`;
 
-    const measurementsAsArray = measurementsAsString.split('\n    ');
-
-    const countIncreases = (array) => {
-      let count = 1;
-    
-      for (let i = 1; i < array.length; i++) {
-        // Start from the second item in the array as the first item has nothing to compare to
-        if (array[i] > array[i - 1]) {
-          count++;
-        }
-      }
-    
-      return count;
-    }
-    
-    console.log(countIncreases(measurementsAsArray));
+export const measurementsAsArray = measurementsAsString
+    .split('\n    ')
+    .map((item) => Number(item));
